@@ -5,8 +5,9 @@ export const projects = [
     id: 1,
     title: "Portfolio Website",
     category: "frontend",
-    image: "/projects/frontend1.png",
-    
+    image: "/IMAGENES/PORTIMG.jpg",
+    link: "https://github.com/jumanuu/Creative-Projects",
+    description: "Mi sitio web personal desarrollado con React y Tailwind CSS, diseñado para mostrar mis proyectos y habilidades de manera profesional y atractiva.",
   },
   {
     id: 2,
@@ -78,9 +79,10 @@ export const projects = [
     id: 9,
     title: "Beto Honey",
     category: "UX/UI",
-    image: [],
+    image: ["/IMAGENES/BETO-HONEY.jpg"],
     images: [],
     description: "Diseño realizado en Figma para la aplicación móvil de Beto Honey, Ejercicio académico enfocado en la experiencia de usuario y la interfaz de usuario.",
+    link: "https://www.figma.com/design/Lhll8Hg0fikUcwftViw0KW/proyects?node-id=17-80&p=f&t=bYcJg4gum7CvZJF5-0"
   },
    {
     id: 10,
