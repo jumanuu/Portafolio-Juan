@@ -1,0 +1,17 @@
+/* Socials */
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.socials a {
+  color: #b88cff;
+  font-size: 24px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  color: #f1eaff;
+}

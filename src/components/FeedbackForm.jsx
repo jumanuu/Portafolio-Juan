@@ -6,6 +6,7 @@ import { db } from "../coments/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
+import "../styles/FeedbackForm.css";
 
 const FeedbackForm = () => {
   const [rating, setRating] = useState(0);

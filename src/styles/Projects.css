@@ -1,0 +1,246 @@
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-bottom: 15px;
+}
+
+/* Project Card */
+.project-card {
+  background: #1a1625;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.3s ease;
+  height: auto;
+  min-height: 280px;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 20px rgba(184, 140, 255, 0.6);
+}
+
+/* Project Thumbnail */
+.project-thumb {
+  background: #2a2340;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Project Image */
+.project-image-img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background: #000;
+  display: block;
+}
+
+/* Placeholder */
+.thumb-placeholder {
+  color: #b88cff;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Project Action Button */
+.project-action {
+  font-weight: 600;
+  height: 44px;
+  border-radius: 10px;
+  background: #2a2340;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.project-action:hover {
+  background: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.btn-text {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.btn-play {
+  position: absolute;
+  font-size: 1.6rem;
+  color: white;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.project-card:hover .btn-play {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project-card:hover .btn-text {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Project Description */
+.project-description {
+  font-size: 0.9rem;
+  line-height: 1.6em;
+  color: #cfc7ff;
+  margin-top: 8px;
+}
+
+/* Project Filters */
+.project-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.project-filters button {
+  background: transparent;
+  border: 1px solid #b88cff;
+  color: #b88cff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-filters button.active,
+.project-filters button:hover {
+  background: #b88cff;
+  color: #0d0b14;
+}
+
+/* Video Modal */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+.video-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.video-container {
+  position: relative;
+  width: min(90vw, 900px);
+  background: #000;
+  border-radius: 16px;
+  padding: 16px;
+  z-index: 2;
+}
+
+.video-player {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 70vh;
+}
+
+.video-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Gallery Modal */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+.gallery-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.gallery-container {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.gallery-image {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.463);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.gallery-nav.left { left: -50px; }
+.gallery-nav.right { right: -50px; }
+
+.gallery-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: #7c3aed;
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-nav.left { left: 8px; }
+  .gallery-nav.right { right: 8px; }
+}

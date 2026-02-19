@@ -3,6 +3,7 @@ import { db } from '../coments/firebase';
 import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
+import '../styles/Footer.css';
 
 export default function Footer() {
   const [comments, setComments] = useState([]);

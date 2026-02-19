@@ -3,6 +3,7 @@ import GridProjects from "./GridProjects";
 import { projects } from "./Projectsdata";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
+import "../styles/Projects.css";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("frontend");

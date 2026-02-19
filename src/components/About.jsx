@@ -1,6 +1,8 @@
 import Socials from "./socials";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
+import "../styles/Animations.css";
+import "../styles/Socials.css";
 
 const About = () => {
   const { language } = useLanguage();

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Globe } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
+import "../styles/Header.css";
 
 const BASE_PATH = import.meta.env.DEV ? "" : "/Portafolio-Juan";
 

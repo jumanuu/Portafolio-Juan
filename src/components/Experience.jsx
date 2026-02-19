@@ -1,5 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../data/translations";
+import "../styles/Experience.css";
 
 const Experience = () => {
   const { language } = useLanguage();

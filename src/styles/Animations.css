@@ -1,0 +1,21 @@
+/* Fade-in animation for sections */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Section base styles */
+section {
+  margin: 30px 0;
+}
+
+h3, h2 {
+  color: #b88cff;
+  margin-bottom: 15px;
+}
