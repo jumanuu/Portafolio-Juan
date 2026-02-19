@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
-import FeedbackForm from "../components/FeedbackForm";  // ← Añade esta línea
+import FeedbackForm from "../components/FeedbackForm";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -15,9 +15,9 @@ const Home = () => {
         <Experience />
         <Projects />
         <FeedbackForm /> 
-         <Footer />
       </main>
- 
+      
+      <Footer />
     </>
   );
 };

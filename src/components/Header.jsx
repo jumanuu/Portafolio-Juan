@@ -1,6 +1,15 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { Globe } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../data/translations";
+
+const BASE_PATH = import.meta.env.DEV ? "" : "/Portafolio-Juan";
 
 const Header = () => {
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language].header;
+
   return (
     <motion.header
       className="header-band"
@@ -11,24 +20,33 @@ const Header = () => {
       <div className="header-content">
         <div>
           <span className="header-role">
-            Frontend Developer | Graphic Designer
+            {t.role}
           </span>
-          <h1 className="header-name">Juan Manuel Calderon</h1>
+          <h1 className="header-name">{t.name}</h1>
         </div>
 
-        {/* BOTÓN CORRECTO */}
-        <motion.a
-          href="CV_Juan_Manuel_Calderon_ATS_ES.pdf"
-          download
-          className="cv-button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Download CV
-        </motion.a>
+        <div className="header-actions">
+          <motion.a
+            href={`${BASE_PATH}/CV_Juan_Manuel_Calderon_ATS_ES.pdf`}
+            download
+            className="cv-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t.downloadCV}
+          </motion.a>
+
+          <button
+            onClick={toggleLanguage}
+            className="language-toggle"
+          >
+            <Globe size={16} />
+            {translations[language].language.switch}
+          </button>
+        </div>
       </div>
     </motion.header>
   );
 };
-
+ 
 export default Header;

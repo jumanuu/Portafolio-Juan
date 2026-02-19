@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 function GridProjects({ project }) {
   const isVideo = project.category === "video";
   const isGallery = Array.isArray(project.images) && project.images.length > 0;
-
   const hasVideo = Boolean(project.video);
   const hasImage = Boolean(project.image);
 
@@ -12,11 +11,7 @@ function GridProjects({ project }) {
   const [openGallery, setOpenGallery] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
-  /* 🖼️ Thumbnail */
-  useEffect(() => {
-    if (hasImage) setThumb(project.image);
-    else setThumb(null);
-  }, [project, hasImage]);
+  const effectiveThumb = hasImage ? project.image : thumb;
 
   /* 🎬 Miniatura desde video */
   useEffect(() => {
@@ -60,14 +55,14 @@ function GridProjects({ project }) {
       <div className="project-card">
         {/* Thumbnail */}
         <div className="project-thumb">
-          {thumb ? (
+          {effectiveThumb ? (
             <img
-              src={thumb}
+              src={effectiveThumb}
               alt={project.title}
               className="project-image-img"
             />
           ) : (
-            <div className="thumb-placeholder">No preview</div>
+            <div className="thumb-placeholder">No preview: {project.title}</div>
           )}
         </div>
 
