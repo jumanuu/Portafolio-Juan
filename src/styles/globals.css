@@ -35,6 +35,10 @@ body {
     padding: 180px 16px 16px;
   }
   
+  section:first-of-type {
+    margin-top: 40px;
+  }
+  
   section {
     margin: 20px 0;
   }
