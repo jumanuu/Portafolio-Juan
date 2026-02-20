@@ -14,6 +14,7 @@ export const projects = [
     title: "Scroll-driven Experience Web App",
     category: "frontend",
     image: `${BASE_PATH}/IMAGENES/dinamicshow.jpg`,
+    link: "https://github.com/jumanuu/DinamicShow",
     description: "Una experiencia interactiva donde el scroll controla la narrativa visual. Diseñada y desarrollada con React y Tailwind, enfocada en storytelling y UX.",
   },
   {

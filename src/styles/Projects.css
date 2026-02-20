@@ -239,8 +239,52 @@
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .project-card {
+    padding: 12px;
+    min-height: auto;
+  }
+  
+  .project-filters {
+    gap: 8px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .project-filters button {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+  
+  .project-description {
+    font-size: 0.85rem;
+  }
+  
+  .project-action {
+    height: 40px;
+    font-size: 0.9rem;
   }
   
   .gallery-nav.left { left: 8px; }
   .gallery-nav.right { right: 8px; }
+  
+  .gallery-image {
+    max-width: 95vw;
+    max-height: 60vh;
+  }
+  
+  .gallery-container {
+    max-width: 95vw;
+  }
+  
+  .video-container {
+    width: 95vw;
+    padding: 8px;
+  }
+  
+  .video-player {
+    max-height: 50vh;
+  }
 }

@@ -151,3 +151,58 @@ footer::after {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+@media (max-width: 768px) {
+  footer {
+    margin-top: 48px;
+    padding: 48px 16px 40px;
+    border-radius: 40px 40px 0 0;
+  }
+  
+  .comments-section {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .comments-section h3 {
+    font-size: 1.25rem;
+  }
+  
+  .comments-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  
+  .comments-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .comment-card {
+    padding: 14px;
+  }
+  
+  .comment-text {
+    font-size: 0.85rem;
+  }
+  
+  .footer-final {
+    padding-top: 24px;
+  }
+  
+  .footer-thanks {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+  
+  .footer-message {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  
+  .footer-cta {
+    font-size: 1.6rem;
+  }
+}

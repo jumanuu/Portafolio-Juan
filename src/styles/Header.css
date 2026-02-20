@@ -37,8 +37,12 @@
 }
 
 .language-toggle:hover {
-  background: rgba(184, 140, 255, 0.15);
-  color: #c78fff;
+  background: transparent;
+  color: #fff;
+}
+
+.language-toggle:hover svg {
+  transform: scale(1.1);
 }
 
 .header-role {
@@ -91,6 +95,10 @@
 }
 
 @media (max-width: 768px) {
+  .header-band {
+    padding: 16px 0 32px;
+  }
+  
   .header-content {
     flex-direction: column;
     gap: 16px;
@@ -99,5 +107,20 @@
   
   .header-actions {
     flex-direction: column;
+    width: 100%;
+  }
+  
+  .header-name {
+    font-size: 22px;
+  }
+  
+  .header-role {
+    font-size: 10px;
+  }
+  
+  .cv-button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
   }
 }
