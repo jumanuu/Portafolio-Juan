@@ -30,7 +30,7 @@ export const projects = [
     title: "Barber-App",
     category: "frontend",
     image: `${BASE_PATH}/IMAGENES/barberapp.jpeg`,
-    link: "https://github.com/jumanuu/BarberApp",
+    link: "https://github.com/jumanuu/Barber-app",
     description: "Pagina web, maquetada para integrar a un negocio de barberia, en al aplicacion podras pedir cita con tu barbero favorito y en la sucursal mas cercana.",
   },
   {

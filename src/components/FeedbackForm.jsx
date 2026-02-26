@@ -97,7 +97,6 @@ const FeedbackForm = () => {
           >
             <h2 className="feedback-header-h2">{t.title}</h2>
             
-            <label className="rating-label">Tu calificación</label>
             <div className="rating-stars">
               {[1, 2, 3, 4, 5].map((star) => (
                 <motion.span
