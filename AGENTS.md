@@ -7,6 +7,7 @@
 | `npm run dev` | Inicia servidor de desarrollo (Vite) |
 | `npm run build` | Build de producción (genera /dist) |
 | `npm run lint` | Ejecuta ESLint en todo el proyecto |
+| `npm run lint -- --fix` | Ejecuta ESLint con autofix |
 | `npm run preview` | Preview del build localmente |
 | `npm run predeploy && npm run deploy` | Despliega a GitHub Pages (branch gh-pages) |
 
@@ -19,31 +20,19 @@
 - **Utilidades/hooks**: `camelCase` con prefijo `use` 
 - **Archivos de datos**: `camelCase` (`projectsData.js`, `socials.jsx`)
 - **CSS**: `camelCase` (`global.css`, `components.css`)
+- **Contextos**: `PascalCase` con sufijo `Context` (`LanguageContext.jsx`)
 
 ### Orden de Imports
 ```javascript
-// 1. React core
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-// 2. Bibliotecas de terceros (alfabético)
-import { motion } from "framer-motion";
-import { getFirestore } from "firebase/firestore";
-import { useState, useEffect } from "react";
-
-// 3. Componentes/pages locales
-import Home from "./pages/Home";
-import Header from "./components/Header";
-
-// 4. Estilos
-import "./styles/global.css";
-import "./styles/components.css";
+// 1. React core → 2. Bibliotecas de terceros (alfabético) → 
+// 3. Componentes/pages locales → 4. Contextos locales → 
+// 5. Datos/traducciones → 6. Estilos
 ```
 
 ### Patrones de Componentes
 ```jsx
-// ✅ Componente como función con mayúscula
 const Header = () => {
+  const { language } = useLanguage();
   return (
     <motion.header ...>
       {/* contenido */}
@@ -52,33 +41,65 @@ const Header = () => {
 };
 export default Header;
 
-// ✅ Named exports para utilidades
-export { db };
-
-// ✅ Default export para pages
-export default Home;
+export { db };  // Named exports para utilidades
+export default Home;  // Default export para pages
 ```
 
-### Reglas ESLint Activas
+### Manejo de Errores
+```jsx
+// ✅ try-catch-finally para operaciones async
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  try {
+    await someAsyncOperation();
+    setSuccess(true);
+  } catch (error) {
+    console.error("Error:", error);
+    alert(t.errorMessage);
+  } finally {
+    setLoading(false);
+  }
+};
+
+// ✅ Validación previa
+if (!rating) { alert("Selecciona una calificación"); return; }
+```
+
+### Rendering Condicional
+```jsx
+// ✅ Usar AnimatePresence para transiciones
+<AnimatePresence mode="wait">
+  {submitted ? (
+    <motion.div key="success" ...>...</motion.div>
+  ) : (
+    <motion.form key="form" ...>...</motion.form>
+  )}
+</AnimatePresence>
+```
+
+## Reglas ESLint Activas
 - `no-unused-vars`: Error, excepto variables con patrón `^[A-Z_]`
+- `react-hooks/set-state-in-effect`: Off
 - Extiende: `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh`
-- Ignora: `dist/` folder
+- Ignora: `dist/`, `src/dataconnect-generated/`
 
 ## Estructura del Proyecto
 ```
 src/
-├── components/     # Componentes reutilizables (Header, ProjectCard, GridProjects, etc.)
-├── pages/          # Componentes de página (Home.jsx)
-├── styles/         # CSS global y de componentes
-├── coments/        # Firebase config (nombre histórico - typo)
-├── assets/         # Assets estáticos (SVG, etc.)
+├── components/     # Componentes reutilizables
+├── context/         # React Context (LanguageContext, etc.)
+├── data/            # Datos estáticos y traducciones
+├── pages/           # Componentes de página (Home.jsx)
+├── styles/          # CSS por componente
+├── coments/         # Firebase config (nombre histórico - typo)
 ├── dataconnect-generated/  # Firebase generated code
-├── App.jsx         # Entry component
-└── main.jsx        # ReactDOM render
+├── App.jsx          # Entry component
+└── main.jsx         # ReactDOM render
 public/
-├── IMAGENES/       # Imágenes del portfolio
-├── VIDEOS/         # Videos del portfolio
-└── projects/       # Imágenes de proyectos específicos
+├── IMAGENES/        # Imágenes del portfolio
+├── VIDEOS/          # Videos del portfolio
+└── projects/        # Imágenes de proyectos específicos
 ```
 
 ## Imágenes y Media
@@ -89,40 +110,28 @@ public/
 const BASE_PATH = import.meta.env.DEV ? "" : "/Portafolio-Juan";
 image: `${BASE_PATH}/IMAGENES/foto.jpg`
 ```
-- Las imágenes deben existir en `public/IMAGENES/` o `public/projects/`
-- Videos en `public/VIDEOS/`
 - **Nunca** usar arrays para `image` - usar string
 - Usar `images: []` (array) para galerías múltiples
 
-### Correcto:
-```javascript
-{
-  id: 1,
-  image: `${BASE_PATH}/IMAGENES/PORTIMG.jpg`,
-  images: [`${BASE_PATH}/IMAGENES/img1.png`, `${BASE_PATH}/IMAGENES/img2.png`]
-}
-```
-
-### Incorrecto:
-```javascript
-{
-  id: 1,
-  image: ["/IMAGENES/PORTIMG.jpg"],  // ❌ array en lugar de string
-  image: "/IMAGENES/PORTIMG.jpg"      // ❌ falta BASE_PATH en producción
-}
-```
-
 ## Firebase y Datos
-
-### Configuración
 - Credenciales en `src/coments/firebase.js` - **no exponer en repos públicos**
 - Usar named export: `export { db }`
+- Usar `serverTimestamp()` para fechas en Firestore
+
+## Tailwind CSS
+El proyecto usa **Tailwind CSS v4** con el plugin Vite:
+```jsx
+// ✅ Estilos con Tailwind
+<div className="flex items-center justify-between">
+
+// ✅ Combinar con CSS custom
+<motion.div className="header-band" whileHover={{ scale: 1.05 }}>
+```
 
 ## Deployment
-
 - **GitHub Pages**: Deploy automatico a `https://jumanuu.github.io/Portafolio-Juan/`
-- Base path configurado en `vite.config.js`: `/Portafolio-Juan/`
-- Build output en `/dist`
+- Base path en `vite.config.js`: `/Portafolio-Juan/`
+- Variable `VITE_BASE_PATH` para overrides de entorno
 
 ## Reglas Importantes
 
@@ -130,4 +139,5 @@ image: `${BASE_PATH}/IMAGENES/foto.jpg`
 2. **Vite** - no usar Create React App
 3. **JavaScript puro** - sin TypeScript
 4. **Framer Motion** - animaciones de UI (motion.header, motion.div, etc.)
-5. **No hacer commit** de archivos en `/dist` o credenciales
+5. **Tailwind CSS** - para estilos utilitarios
+6. **No hacer commit** de archivos en `/dist` o credenciales

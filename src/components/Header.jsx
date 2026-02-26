@@ -28,8 +28,8 @@ const Header = () => {
 
         <div className="header-actions">
           <motion.a
-            href={`${BASE_PATH}/CV_Juan_Manuel_Calderon_ATS_ES.pdf`}
-            download
+            href={`${BASE_PATH}/Juan Manuel Calderon.pdf`}
+            download="Juan Manuel Calderon.pdf"
             className="cv-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

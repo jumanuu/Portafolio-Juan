@@ -7,13 +7,7 @@ export const translations = {
     },
     about: {
       title: "SOBRE MÍ",
-      text: `Diseñador gráfico con alrededor de dos años de experiencia combinando
-trabajo freelance y experiencia formal, especializado en marcas de e-commerce y venta online. He trabajado en el desarrollo de identidad visual,
-branding y diseño web/UI, creando soluciones gráficas alineadas a objetivos
-comerciales y experiencia de usuario. Me caracterizo por un enfoque creativo
-y estratégico, con capacidad para adaptarme a diferentes marcas, trabajar
-por proyectos y cumplir lineamientos visuales en entornos dinámicos y
-orientados a resultados.`,
+      text: `Desarrollador Frontend con más de 2 años de experiencia combinando trabajo freelance y experiencia formal. Especializado en marcas de e-commerce y venta online, con enfoque en identidad visual, branding, diseño web y UX/UI. Experiencia en desarrollo frontend utilizando React + Vite, JavaScript (ES6+), HTML5, CSS3 y Tailwind CSS. Capacidad para diseñar, prototipar y desarrollar interfaces modernas, responsivas y orientadas a la experiencia de usuario.`,
     },
     experience: {
       title: "EXPERIENCIA",
@@ -83,13 +77,7 @@ Estoy construyendo mi camino como Desarrollador Frontend y Diseñador Gráfico.`
     },
     about: {
       title: "ABOUT ME",
-      text: `Graphic designer with around two years of experience combining
-freelance work and formal experience, specialized in e-commerce and online sales brands. I have worked on visual identity development,
-branding and web/UI design, creating graphic solutions aligned with
-commercial objectives and user experience. I am characterized by a creative
-and strategic approach, with the ability to adapt to different brands, work
-on projects and meet visual guidelines in dynamic and
-results-oriented environments.`,
+      text: `Frontend Developer with over 2 years of experience combining freelance work and formal experience. Specialized in e-commerce and online sales brands, with a focus on visual identity, branding, web design and UX/UI. Experience in frontend development using React + Vite, JavaScript (ES6+), HTML5, CSS3 and Tailwind CSS. Ability to design, prototype and develop modern, responsive, user experience-oriented interfaces.`,
     },
     experience: {
       title: "EXPERIENCE",

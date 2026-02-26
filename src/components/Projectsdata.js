@@ -17,8 +17,24 @@ export const projects = [
     link: "https://github.com/jumanuu/DinamicShow",
     description: "Una experiencia interactiva donde el scroll controla la narrativa visual. Diseñada y desarrollada con React y Tailwind, enfocada en storytelling y UX.",
   },
-  {
+   {
     id: 3,
+    title: "AInsights",
+    category: "frontend",
+    image: `${BASE_PATH}/IMAGENES/AInsights.jpeg`,
+    link: "https://github.com/jumanuu/AInsights",
+    description: "proyecto en donde los creadores de contenido podran realizar estudio de las metricas de su contenido y ademas tiene un chat asistido por ia para hacer un mejor analisis y obtener propuestas de estrategia de contenido.",
+  },
+   {
+    id: 4,
+    title: "Barber-App",
+    category: "frontend",
+    image: `${BASE_PATH}/IMAGENES/barberpp.jpeg`,
+    link: "https://github.com/jumanuu/BarberApp",
+    description: "Pagina web, maquetada para integrar a un negocio de barberia, en al aplicacion podras pedir cita con tu barbero favorito y en la sucursal mas cercana.",
+  },
+  {
+    id: 5,
     title: "Zarza Shoots TikTok Video",
     category: "video",
     platform: "tiktok",
@@ -27,7 +43,7 @@ export const projects = [
     description: "Zarzashoots es un proyecto nacido en la capital colombiana que captura la esencia del street basketball: intensidad, estilo y cultura urbana.",
   },
   {
-    id: 4,
+    id: 6,
     title: "Swiftmay Reels",
     category: "video",
     platform: "instagram",
@@ -36,14 +52,14 @@ export const projects = [
     description: "Swiftmay es una empresa dedicada a crear medias veladas pensadas especialmente para personas de color."
   },
   {
-    id: 5,
+    id: 7,
     title: "Hihglights Basketball",
     category: "video",
     platform: "instagram",
     video: `${BASE_PATH}/VIDEOS/CEFE CLIPS.mp4`,
   },
   {
-    id: 6,
+    id: 8,
     title: "Flyers ",
     category: "graphics",
     image: `${BASE_PATH}/IMAGENES/ALUMBRADOS1.png`,
@@ -54,7 +70,7 @@ export const projects = [
     description: "Diseños de flyers promocionales para tours navideños",
   },
   {
-    id: 7,
+    id: 9,
     title: "Flyers Basketball",
     category: "graphics",
     image: `${BASE_PATH}/IMAGENES/5vs5 .jpg`,
@@ -67,7 +83,7 @@ export const projects = [
     description: "Diseños de flyers promocionales para torneos de baloncesto",
   },
   {
-    id: 8,
+    id: 10,
     title: "Thumbnails",
     category: "graphics",
     image: `${BASE_PATH}/IMAGENES/El texto del párrafo.png`,
@@ -77,7 +93,7 @@ export const projects = [
     description: "Diseño de miniatura para videos de YouTube",
   },
   {
-    id: 9,
+    id: 11,
     title: "Beto Honey",
     category: "UX/UI",
     image: `${BASE_PATH}/IMAGENES/BETO-HONEY.jpg`,
@@ -86,7 +102,7 @@ export const projects = [
     link: "https://www.figma.com/design/Lhll8Hg0fikUcwftViw0KW/proyects"
   },
   {
-    id: 10,
+    id: 12,
     title: "TestIA",
     category: "UX/UI",
     image: `${BASE_PATH}/IMAGENES/mini-tareas.jpg`,
