@@ -35,6 +35,14 @@ export const projects = [
   },
   {
     id: 5,
+    title: "Fuxion Page",
+    category: "frontend",
+    image: `${BASE_PATH}/IMAGENES/fuxionpage.jpg`,
+    link: "https://github.com/jumanuu/Fuxion-page",
+    description: "Trabajo de front-end para un e-comerce de productos de vitalidad y salud, provenientes de fuxion colombia.",
+  },
+  {
+    id: 6,
     title: "Zarza Shoots TikTok Video",
     category: "video",
     platform: "tiktok",
@@ -43,7 +51,7 @@ export const projects = [
     description: "Zarzashoots es un proyecto nacido en la capital colombiana que captura la esencia del street basketball: intensidad, estilo y cultura urbana.",
   },
   {
-    id: 6,
+    id: 7,
     title: "Swiftmay Reels",
     category: "video",
     platform: "instagram",
@@ -52,14 +60,14 @@ export const projects = [
     description: "Swiftmay es una empresa dedicada a crear medias veladas pensadas especialmente para personas de color."
   },
   {
-    id: 7,
+    id: 8,
     title: "Hihglights Basketball",
     category: "video",
     platform: "instagram",
     video: `${BASE_PATH}/VIDEOS/CEFE CLIPS.mp4`,
   },
   {
-    id: 8,
+    id: 9,
     title: "Flyers ",
     category: "graphics",
     image: `${BASE_PATH}/IMAGENES/ALUMBRADOS1.png`,
@@ -70,7 +78,7 @@ export const projects = [
     description: "Diseños de flyers promocionales para tours navideños",
   },
   {
-    id: 9,
+    id: 10,
     title: "Flyers Basketball",
     category: "graphics",
     image: `${BASE_PATH}/IMAGENES/5vs5 .jpg`,
@@ -83,7 +91,7 @@ export const projects = [
     description: "Diseños de flyers promocionales para torneos de baloncesto",
   },
   {
-    id: 10,
+    id: 11,
     title: "Thumbnails",
     category: "graphics",
     image: `${BASE_PATH}/IMAGENES/El texto del párrafo.png`,
@@ -93,7 +101,7 @@ export const projects = [
     description: "Diseño de miniatura para videos de YouTube",
   },
   {
-    id: 11,
+    id: 12,
     title: "Beto Honey",
     category: "UX/UI",
     image: `${BASE_PATH}/IMAGENES/BETO-HONEY.jpg`,
@@ -102,7 +110,7 @@ export const projects = [
     link: "https://www.figma.com/design/Lhll8Hg0fikUcwftViw0KW/proyects"
   },
   {
-    id: 12,
+    id: 13,
     title: "TestIA",
     category: "UX/UI",
     image: `${BASE_PATH}/IMAGENES/mini-tareas.jpg`,
