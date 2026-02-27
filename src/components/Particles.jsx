@@ -34,7 +34,6 @@ const Particles = () => {
             animationDuration: `${p.duration}s`,
             width: `${p.size}px`,
             height: `${p.size}px`,
-            opacity: p.opacity,
           }}
         />
       ))}
