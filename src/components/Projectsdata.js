@@ -116,5 +116,13 @@ export const projects = [
     image: `${BASE_PATH}/IMAGENES/mini-tareas.jpg`,
     images: [],
     description: "TestIA es una plataforma web diseñada para evaluar candidatos a puestos relacionados con desarrollo.",
+  },
+  {
+    id:14,
+    title:"Amaya",
+    category:frontend,
+    image:`${BASE_PATH}/IMAGENES/AMAYACARS.jpg`,
+    link:"https://github.com/jumanuu/AMAYA",
+    description:"Ejemplo de interfaz dinamica, pensadad para un consesionario automovilistico hecho en HTML, CSS, JS y la libreria GSAP",
   }
 ];
